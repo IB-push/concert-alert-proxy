@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: concert-alert-proxy
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    envVars:
+      - key: PUSHOVER_TOKEN
+        value: "ton_token_pushover"
+      - key: PUSHOVER_USER
+        value: "ton_token_user"
+      - key: DISCORD_WEBHOOK_URL
+        value: "ton_url_discord"
+      - key: LICENSE_KEY
+        value: "ta_clé_de_licence"
